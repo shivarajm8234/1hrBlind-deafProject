@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Exchange Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Language Exchange Platform</h1>
+    </header>
+    <main>
+        <section id="translation">
+            <h2>Translate Text</h2>
+            <input type="text" id="text-to-translate" placeholder="Enter text to translate">
+            <select id="target-lang">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <!-- Add more language options -->
+            </select>
+            <button onclick="translateText()">Translate</button>
+            <p id="translated-text"></p>
+            <p id="translate-error" class="error"></p>
+        </section>
+        <section id="text-to-speech">
+            <h2>Text to Speech</h2>
+            <input type="text" id="text-to-speak" placeholder="Enter text to speak">
+            <button onclick="speakText()">Speak</button>
+            <audio id="speech-audio" controls></audio>
+            <p id="speak-error" class="error"></p>
+        </section>
+        <section id="sign-language-image">
+            <h2>Image Generate for Blind People</h2>
+            <input type="text" id="text-to-sign" placeholder="Enter text for sign language">
+            <button onclick="generateSignLanguageImage()">Generate Image</button>
+            <img id="sign-image" alt="Sign Language Image">
+            <p id="sign-error" class="error"></p>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
